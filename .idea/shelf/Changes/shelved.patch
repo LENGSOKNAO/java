@@ -1,0 +1,2003 @@
+Index: src/Banking/system/connect.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/connect.java b/src/Banking/system/connect.java
+new file mode 100644
+--- /dev/null	(date 1720098329048)
++++ b/src/Banking/system/connect.java	(date 1720098329048)
+@@ -0,0 +1,16 @@
++package Banking.system;
++
++import java.sql.*;
++
++public class connect {
++    Connection connection;
++    Statement statement;
++    public connect() {
++        try {
++            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bankSystem", "root", "AyushVish");
++            statement = connection.createStatement();
++        } catch (Exception e) {
++            e.printStackTrace();
++        }
++    }
++}
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+new file mode 100644
+--- /dev/null	(date 1720088672744)
++++ b/.idea/uiDesigner.xml	(date 1720088672744)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/libraries/mysql_connector_java_8_0_28.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/mysql_connector_java_8_0_28.xml b/.idea/libraries/mysql_connector_java_8_0_28.xml
+new file mode 100644
+--- /dev/null	(date 1720098100005)
++++ b/.idea/libraries/mysql_connector_java_8_0_28.xml	(date 1720098100005)
+@@ -0,0 +1,9 @@
++<component name="libraryTable">
++  <library name="mysql-connector-java-8.0.28">
++    <CLASSES>
++      <root url="jar://$PROJECT_DIR$/../../../mysql-connector-java-8.0.28.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: src/Banking/system/Signup2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/Signup2.java b/src/Banking/system/Signup2.java
+new file mode 100644
+--- /dev/null	(date 1720100879310)
++++ b/src/Banking/system/Signup2.java	(date 1720100879310)
+@@ -0,0 +1,222 @@
++package Banking.system;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++
++public class Signup2 extends JFrame implements ActionListener {
++    JComboBox comboBox,comboBox2,comboBox3,comboBox4,comboBox5;
++    JTextField textPan,textAadhar;
++    JRadioButton r1,r2, e1,e2;
++    JButton next;
++    String formno;
++    Signup2(String formno){
++        super("APPLICATION FORM");
++
++        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/bank.png"));
++        Image i2 = i1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);
++        ImageIcon i3 = new ImageIcon(i2);
++        JLabel image = new JLabel(i3);
++        image.setBounds(150,5,100,100);
++        add(image);
++
++        this.formno = formno;
++
++        JLabel l1 = new JLabel("Page 2 :-");
++        l1.setFont(new Font("Raleway", Font.BOLD,22));
++        l1.setBounds(300,30,600,40);
++        add(l1);
++
++        JLabel l2 = new JLabel("Additonal Details");
++        l2.setFont(new Font("Raleway", Font.BOLD,22));
++        l2.setBounds(300,60,600,40);
++        add(l2);
++
++        JLabel l3 = new JLabel("Religion :");
++        l3.setFont(new Font("Raleway", Font.BOLD,18));
++        l3.setBounds(100,120,100,30);
++        add(l3);
++
++        String religion[] = {"Hindu","Muslim","Sikh", "Christian", "Other"};
++        comboBox = new JComboBox(religion);
++        comboBox.setBackground(new Color(252,208,76));
++        comboBox.setFont(new Font("Raleway",Font.BOLD,14));
++        comboBox.setBounds(350,120,320,30);
++        add(comboBox);
++
++        JLabel l4 = new JLabel("Category : ");
++        l4.setFont(new Font("Raleway", Font.BOLD,18));
++        l4.setBounds(100,170,100,30);
++        add(l4);
++
++        String Category [] = {"General","OBC","SC", "ST", "Other"};
++        comboBox2 = new JComboBox(Category);
++        comboBox2.setBackground(new Color(252,208,76));
++        comboBox2.setFont(new Font("Raleway",Font.BOLD,14));
++        comboBox2.setBounds(350,170,320,30);
++        add(comboBox2);
++
++        JLabel l5 = new JLabel("Income : ");
++        l5.setFont(new Font("Raleway", Font.BOLD,18));
++        l5.setBounds(100,220,100,30);
++        add(l5);
++
++        String income [] = {"Null","<1,50,000","<2,50,000", "5,00,000", "Uptp 10,00,000","Above 10,00,000"};
++        comboBox3 = new JComboBox(income);
++        comboBox3.setBackground(new Color(252,208,76));
++        comboBox3.setFont(new Font("Raleway",Font.BOLD,14));
++        comboBox3.setBounds(350,220,320,30);
++        add(comboBox3);
++
++        JLabel l6 = new JLabel("Educational : ");
++        l6.setFont(new Font("Raleway", Font.BOLD,18));
++        l6.setBounds(100,270,150,30);
++        add(l6);
++
++        String educational [] = {"Non-Graduate","Graduate","Post-Graduate", "Doctrate", "Others"};
++        comboBox4 = new JComboBox(educational);
++        comboBox4.setBackground(new Color(252,208,76));
++        comboBox4.setFont(new Font("Raleway",Font.BOLD,14));
++        comboBox4.setBounds(350,270,320,30);
++        add(comboBox4);
++
++
++        JLabel l7 = new JLabel("Occupation : ");
++        l7.setFont(new Font("Raleway", Font.BOLD,18));
++        l7.setBounds(100,340,150,30);
++        add(l7);
++
++        String Occupation [] = {"Salaried","Self-Employed","Business", "Student", "Retired", "Other"};
++        comboBox5 = new JComboBox(Occupation);
++        comboBox5.setBackground(new Color(252,208,76));
++        comboBox5.setFont(new Font("Raleway",Font.BOLD,14));
++        comboBox5.setBounds(350,340,320,30);
++        add(comboBox5);
++
++        JLabel l8 = new JLabel("PAN Number : ");
++        l8.setFont(new Font("Raleway", Font.BOLD,18));
++        l8.setBounds(100,390,150,30);
++        add(l8);
++
++        textPan = new JTextField();
++        textPan.setFont(new Font("Raleway", Font.BOLD,18));
++        textPan.setBounds(350,390,320,30);
++        add(textPan);
++
++        JLabel l9 = new JLabel("Aadhar Number : ");
++        l9.setFont(new Font("Raleway", Font.BOLD,18));
++        l9.setBounds(100,440,180,30);
++        add(l9);
++
++        textAadhar = new JTextField();
++        textAadhar.setFont(new Font("Raleway", Font.BOLD,18));
++        textAadhar.setBounds(350,440,320,30);
++        add(textAadhar);
++
++
++        JLabel l10 = new JLabel("Senior Citizen : ");
++        l10.setFont(new Font("Raleway", Font.BOLD,18));
++        l10.setBounds(100,490,180,30);
++        add(l10);
++
++        r1 = new JRadioButton("Yes");
++        r1.setFont(new Font("Raleway", Font.BOLD,14));
++        r1.setBackground(new Color(252,208,76));
++        r1.setBounds(350,490,100,30);
++        add(r1);
++        r2 = new JRadioButton("No");
++        r2.setFont(new Font("Raleway", Font.BOLD,14));
++        r2.setBackground(new Color(252,208,76));
++        r2.setBounds(460,490,100,30);
++        add(r2);
++
++        JLabel l11 = new JLabel("Existing Account : ");
++        l11.setFont(new Font("Raleway", Font.BOLD,18));
++        l11.setBounds(100,540,180,30);
++        add(l11);
++
++        e1 = new JRadioButton("Yes");
++        e1.setFont(new Font("Raleway", Font.BOLD,14));
++        e1.setBackground(new Color(252,208,76));
++        e1.setBounds(350,540,100,30);
++        add(e1);
++        e2 = new JRadioButton("No");
++        e2.setFont(new Font("Raleway", Font.BOLD,14));
++        e2.setBackground(new Color(252,208,76));
++        e2.setBounds(460,540,100,30);
++        add(e2);
++
++        JLabel l12 = new JLabel("Form No : ");
++        l12.setFont(new Font("Raleway", Font.BOLD,14));
++        l12.setBounds(700,10,100,30);
++        add(l12);
++
++        JLabel l13 = new JLabel(formno);
++        l13.setFont(new Font("Raleway", Font.BOLD,14));
++        l13.setBounds(760,10,60,30);
++        add(l13);
++
++        next = new JButton("Next");
++        next.setFont(new Font("Raleway",Font.BOLD,14));
++        next.setBackground(Color.WHITE);
++        next.setForeground(Color.BLACK);
++        next.setBounds(570,640,100,30);
++        next.addActionListener(this);
++        add(next);
++
++
++        setLayout(null);
++        setSize(850,750);
++        setLocation(450,80);
++        getContentPane().setBackground(new Color(252, 208, 76));
++        setVisible(true);
++    }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++        String rel = (String) comboBox.getSelectedItem();
++        String cate = (String) comboBox2.getSelectedItem();
++        String inc = (String) comboBox3.getSelectedItem();
++        String edu = (String) comboBox4.getSelectedItem();
++        String occ = (String) comboBox5.getSelectedItem();
++
++        String pan = textPan.getText();
++        String addhar = textAadhar.getText();
++
++        String scitizen = " ";
++        if ((r1.isSelected())){
++            scitizen = "Yes";
++        } else if (r2.isSelected()) {
++            scitizen ="No";
++        }
++        String eAccount = " ";
++        if ((r1.isSelected())){
++            eAccount = "Yes";
++        } else if (r2.isSelected()) {
++            eAccount ="No";
++        }
++
++        try{
++            if (textPan.getText().equals("") || textAadhar.getText().equals("")){
++                JOptionPane.showMessageDialog(null,"Fill all the fields");
++            }else {
++                connect c = new connect();
++                String q = "insert into Signuptwo values('"+formno+"', '"+rel+"', '"+cate+"','"+inc+"','"+edu+"','"+occ+"','"+pan+"','"+addhar+"','"+scitizen+"','"+eAccount+"')";
++                c.statement.executeUpdate(q);
++                new Signup3(formno);
++                setVisible(false);
++            }
++
++
++        }catch (Exception E){
++            E.printStackTrace();
++        }
++
++
++    }
++
++    public static void main(String[] args) {
++        new Signup2("");
++    }
++}
+\ No newline at end of file
+Index: Banking.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Banking.iml b/Banking.iml
+new file mode 100644
+--- /dev/null	(date 1720098100005)
++++ b/Banking.iml	(date 1720098100005)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" name="jcalendar-1.4" level="application" />
++    <orderEntry type="library" name="mysql-connector-java-8.0.28" level="project" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1720086961048)
++++ b/.idea/vcs.xml	(date 1720086961048)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1720086961025)
++++ b/.idea/modules.xml	(date 1720086961025)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/Banking.iml" filepath="$PROJECT_DIR$/Banking.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/Banking/system/main_Class.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/main_Class.java b/src/Banking/system/main_Class.java
+new file mode 100644
+--- /dev/null	(date 1720101077822)
++++ b/src/Banking/system/main_Class.java	(date 1720101077822)
+@@ -0,0 +1,110 @@
++package Banking.system;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++
++public class main_Class extends JFrame implements ActionListener {
++    JButton b1,b2,b3,b4,b5,b6,b7;
++    String pin;
++    main_Class(String pin){
++        this.pin = pin;
++
++        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/atm2.png"));
++        Image i2 = i1.getImage().getScaledInstance(1550,830,Image.SCALE_DEFAULT);
++        ImageIcon i3 = new ImageIcon(i2);
++        JLabel l3 = new JLabel(i3);
++        l3.setBounds(0,0,1550,830);
++        add(l3);
++
++        JLabel label = new JLabel("Please Select Your Transaction");
++        label.setBounds(430,180,700,35);
++        label.setForeground(Color.WHITE);
++        label.setFont(new Font("System",Font.BOLD,28));
++        l3.add(label);
++
++        b1 = new JButton("DEPOSIT");
++        b1.setForeground(Color.WHITE);
++        b1.setBackground(new Color(65,125,128));
++        b1.setBounds(410,274,150,35);
++        b1.addActionListener(this);
++        l3.add(b1);
++
++        b2 = new JButton("CASH WITHDRAWL");
++        b2.setForeground(Color.WHITE);
++        b2.setBackground(new Color(65,125,128));
++        b2.setBounds(700,274,150,35);
++        b2.addActionListener(this);
++        l3.add(b2);
++
++        b3 = new JButton("FAST CASH");
++        b3.setForeground(Color.WHITE);
++        b3.setBackground(new Color(65,125,128));
++        b3.setBounds(410,318,150,35);
++        b3.addActionListener(this);
++        l3.add(b3);
++
++        b4 = new JButton("MINI STATEMENT");
++        b4.setForeground(Color.WHITE);
++        b4.setBackground(new Color(65,125,128));
++        b4.setBounds(700,318,150,35);
++        b4.addActionListener(this);
++        l3.add(b4);
++
++        b5 = new JButton("PIN CHANGE");
++        b5.setForeground(Color.WHITE);
++        b5.setBackground(new Color(65,125,128));
++        b5.setBounds(410,362,150,35);
++        b5.addActionListener(this);
++        l3.add(b5);
++
++        b6 = new JButton("BALANCE ENQUIRY");
++        b6.setForeground(Color.WHITE);
++        b6.setBackground(new Color(65,125,128));
++        b6.setBounds(700,362,150,35);
++        b6.addActionListener(this);
++        l3.add(b6);
++
++        b7 = new JButton("EXIT");
++        b7.setForeground(Color.WHITE);
++        b7.setBackground(new Color(65,125,128));
++        b7.setBounds(700,406,150,35);
++        b7.addActionListener(this);
++        l3.add(b7);
++
++        setLayout(null);
++        setSize(1550,1080);
++        setLocation(0,0);
++        setVisible(true);
++
++    }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++        if (e.getSource()==b1){
++            new Deposit(pin);
++            setVisible(false);
++        }else if (e.getSource()==b7){
++            System.exit(0);
++        } else if (e.getSource()==b2) {
++            new Withdrawl(pin);
++            setVisible(false);
++        } else if (e.getSource()==b6) {
++            new BalanceEnquriy(pin);
++            setVisible(false);
++        } else if (e.getSource()==b3) {
++            new FastCash(pin);
++            setVisible(false);
++        } else if (e.getSource()==b5) {
++            new Pin(pin);
++            setVisible(false);
++        } else if (e.getSource()==b4) {
++            new mini(pin);
++        }
++    }
++
++    public static void main(String[] args) {
++        new main_Class("");
++    }
++}
+\ No newline at end of file
+Index: src/Banking/system/Deposit.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/Deposit.java b/src/Banking/system/Deposit.java
+new file mode 100644
+--- /dev/null	(date 1720101563075)
++++ b/src/Banking/system/Deposit.java	(date 1720101563075)
+@@ -0,0 +1,89 @@
++package Banking.system;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++import java.util.Date;
++
++public class Deposit extends JFrame implements ActionListener {
++    String pin;
++    TextField textField;
++
++    JButton b1, b2;
++    Deposit(String pin){
++        this.pin = pin;
++
++        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/atm2.png"));
++        Image i2 = i1.getImage().getScaledInstance(1550,830,Image.SCALE_DEFAULT);
++        ImageIcon i3 = new ImageIcon(i2);
++        JLabel l3 = new JLabel(i3);
++        l3.setBounds(0,0,1550,830);
++        add(l3);
++
++        JLabel label1 = new JLabel("ENETR AMOUNT YOU WANT TO DEPOSIT");
++        label1.setForeground(Color.WHITE);
++        label1.setFont(new Font("System", Font.BOLD, 16));
++        label1.setBounds(460,180,400,35);
++        l3.add(label1);
++
++        textField = new TextField();
++        textField.setBackground(new Color(65,125,128));
++        textField.setForeground(Color.WHITE);
++        textField.setBounds(460,230,320,25);
++        textField.setFont(new Font("Raleway", Font.BOLD,22));
++        l3.add(textField);
++
++        b1 = new JButton("DEPOSIT");
++        b1.setBounds(700,362,150,35);
++        b1.setBackground(new Color(65,125,128));
++        b1.setForeground(Color.WHITE);
++        b1.addActionListener(this);
++        l3.add(b1);
++
++        b2 = new JButton("BACK");
++        b2.setBounds(700,406,150,35);
++        b2.setBackground(new Color(65,125,128));
++        b2.setForeground(Color.WHITE);
++        b2.addActionListener(this);
++        l3.add(b2);
++
++
++
++
++        setLayout(null);
++        setSize(1550,1080);
++        setLocation(0,0);
++        setVisible(true);
++
++    }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++        try {
++            String amount = textField.getText();
++            Date date = new Date();
++            if (e.getSource()==b1){
++                if (textField.getText().equals("")){
++                    JOptionPane.showMessageDialog(null,"Please enter the Amount you want to Deposit");
++                }else {
++                    connect c = new connect();
++                    c.statement.executeUpdate("insert into bank values('"+pin+"', '"+date+"','Deposit', '"+amount+"')");
++                    JOptionPane.showMessageDialog(null,"Rs. "+amount+" Deposited Successfully");
++                    setVisible(false);
++                    new main_Class(pin);
++                }
++            }else if (e.getSource()==b2){
++                setVisible(false);
++                new main_Class(pin);
++            }
++        }catch (Exception E){
++            E.printStackTrace();
++        }
++
++    }
++
++    public static void main(String[] args) {
++        new Deposit("");
++    }
++}
+\ No newline at end of file
+Index: src/Banking/system/Signup3.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/Signup3.java b/src/Banking/system/Signup3.java
+new file mode 100644
+--- /dev/null	(date 1720101006467)
++++ b/src/Banking/system/Signup3.java	(date 1720101006467)
+@@ -0,0 +1,251 @@
++package Banking.system;
++
++import javax.print.attribute.standard.JobHoldUntil;
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++import java.rmi.server.ExportException;
++import java.util.Random;
++
++public class Signup3 extends JFrame implements ActionListener {
++
++    JRadioButton r1,r2,r3,r4;
++    JCheckBox c1,c2,c3,c4,c5,c6;
++    JButton s,c;
++    String formno;
++    Signup3(String formno){
++
++        this.formno = formno;
++
++        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/bank.png"));
++        Image i2 = i1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);
++        ImageIcon i3 = new ImageIcon(i2);
++        JLabel image = new JLabel(i3);
++        image.setBounds(150,5,100,100);
++        add(image);
++
++        JLabel l1 = new JLabel("Page 3:");
++        l1.setFont(new Font("Raleway",Font.BOLD,22));
++        l1.setBounds(280,40,400,40);
++        add(l1);
++
++        JLabel l2 = new JLabel("Account Details");
++        l2.setFont(new Font("Raleway",Font.BOLD,22));
++        l2.setBounds(280,70,400,40);
++        add(l2);
++
++        JLabel l3 = new JLabel("Account Type:");
++        l3.setFont(new Font("Raleway",Font.BOLD,18));
++        l3.setBounds(100,140,200,30);
++        add(l3);
++
++        r1 = new JRadioButton("Saving Account");
++        r1.setFont(new Font("Raleway",Font.BOLD,16));
++        r1.setBackground(new Color(215,252,252));
++        r1.setBounds(100,180,150,30);
++        add(r1);
++
++        r2 = new JRadioButton("Fixed Deposit Account");
++        r2.setFont(new Font("Raleway",Font.BOLD,16));
++        r2.setBackground(new Color(215,252,252));
++        r2.setBounds(350,180,300,30);
++        add(r2);
++
++        r3 = new JRadioButton("Current Account");
++        r3.setFont(new Font("Raleway",Font.BOLD,16));
++        r3.setBackground(new Color(215,252,252));
++        r3.setBounds(100,220,250,30);
++        add(r3);
++
++        r4 = new JRadioButton("Recurring Deposit Account");
++        r4.setFont(new Font("Raleway",Font.BOLD,16));
++        r4.setBackground(new Color(215,252,252));
++        r4.setBounds(350,220,250,30);
++        add(r4);
++
++        ButtonGroup buttonGroup = new ButtonGroup();
++        buttonGroup.add(r1);
++        buttonGroup.add(r2);
++        buttonGroup.add(r3);
++        buttonGroup.add(r4);
++
++        JLabel l4 = new JLabel("Card Number:");
++        l4.setFont(new Font("Raleway",Font.BOLD,18));
++        l4.setBounds(100,300,200,30);
++        add(l4);
++
++        JLabel l5 = new JLabel("(Your 16-digit Card Number)");
++        l5.setFont(new Font("Raleway",Font.BOLD,12));
++        l5.setBounds(100,330,200,20);
++        add(l5);
++
++        JLabel l6 = new JLabel("XXXX-XXXX-XXXX-4841");
++        l6.setFont(new Font("Raleway",Font.BOLD,18));
++        l6.setBounds(330,300,250,30);
++        add(l6);
++
++        JLabel l7 = new JLabel("(It would appear on atm card/cheque Book and Statements)");
++        l7.setFont(new Font("Raleway",Font.BOLD,12));
++        l7.setBounds(330,330,500,20);
++        add(l7);
++
++        JLabel l8 = new JLabel("PIN:");
++        l8.setFont(new Font("Raleway",Font.BOLD,18));
++        l8.setBounds(100,370,200,30);
++        add(l8);
++
++        JLabel l9 = new JLabel("XXXX");
++        l9.setFont(new Font("Raleway",Font.BOLD,18));
++        l9.setBounds(330,370,200,30);
++        add(l9);
++
++        JLabel l10 = new JLabel("(4-digit Password)");
++        l10.setFont(new Font("Raleway",Font.BOLD,12));
++        l10.setBounds(100,400,200,20);
++        add(l10);
++
++        JLabel l11 = new JLabel("Services Required:");
++        l11.setFont(new Font("Raleway",Font.BOLD,18));
++        l11.setBounds(100,450,200,30);
++        add(l11);
++
++        c1 = new JCheckBox("ATM CARD");
++        c1.setBackground(new Color(215,252,252));
++        c1.setFont(new Font("Raleway",Font.BOLD,16));
++        c1.setBounds(100,500,200,30);
++        add(c1);
++
++        c2 = new JCheckBox("Internet Banking");
++        c2.setBackground(new Color(215,252,252));
++        c2.setFont(new Font("Raleway",Font.BOLD,16));
++        c2.setBounds(350,500,200,30);
++        add(c2);
++
++        c3 = new JCheckBox("Mobile Banking");
++        c3.setBackground(new Color(215,252,252));
++        c3.setFont(new Font("Raleway",Font.BOLD,16));
++        c3.setBounds(100,550,200,30);
++        add(c3);
++
++        c4 = new JCheckBox("EMAIL Alerts");
++        c4.setBackground(new Color(215,252,252));
++        c4.setFont(new Font("Raleway",Font.BOLD,16));
++        c4.setBounds(350,550,200,30);
++        add(c4);
++
++        c5 = new JCheckBox("Cheque Book");
++        c5.setBackground(new Color(215,252,252));
++        c5.setFont(new Font("Raleway",Font.BOLD,16));
++        c5.setBounds(100,600,200,30);
++        add(c5);
++
++        c6 = new JCheckBox("E-Statement");
++        c6.setBackground(new Color(215,252,252));
++        c6.setFont(new Font("Raleway",Font.BOLD,16));
++        c6.setBounds(350,600,200,30);
++        add(c6);
++
++        JCheckBox c7 = new JCheckBox("I here by decleares that the above entered details correct to the best of my knlowledge.",true);
++        c7.setBackground(new Color(215,252,252));
++        c7.setFont(new Font("Raleway",Font.BOLD,12));
++        c7.setBounds(100,680,600,20);
++        add(c7);
++
++        JLabel l12 = new JLabel("Form No : ");
++        l12.setFont(new Font("Raleway", Font.BOLD,14));
++        l12.setBounds(700,10,100,30);
++        add(l12);
++
++        JLabel l13 = new JLabel(formno);
++        l13.setFont(new Font("Raleway", Font.BOLD,14));
++        l13.setBounds(760,10,60,30);
++        add(l13);
++
++
++        s = new JButton("Submit");
++        s.setFont(new Font("Raleway", Font.BOLD,14));
++        s.setBackground(Color.BLACK);
++        s.setForeground(Color.WHITE);
++        s.setBounds(250,720,100,30);
++        s.addActionListener(this);
++        add(s);
++
++        c = new JButton("Cancel");
++        c.setFont(new Font("Raleway", Font.BOLD,14));
++        c.setBackground(Color.BLACK);
++        c.setForeground(Color.WHITE);
++        c.setBounds(420,720,100,30);
++        c.addActionListener(this);
++        add(c);
++
++        getContentPane().setBackground(new Color(215,252,252));
++        setSize(850,800);
++        setLayout(null);
++        setLocation(400,20);
++        setVisible(true);
++    }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++        String atype = null;
++        if (r1.isSelected()){
++            atype = "Saving Account";
++        } else if (r2.isSelected()) {
++            atype ="Fixed Deposit Account";
++        }else if (r3.isSelected()){
++            atype ="Current Account";
++        }else if (r4.isSelected()){
++            atype = "Recurring Deposit Account";
++        }
++
++        Random ran = new Random();
++        long first7 = (ran.nextLong() % 90000000L) + 1409963000000000L;
++        String cardno = "" + Math.abs(first7);
++
++        long first3 = (ran.nextLong() % 9000L)+ 1000L;
++        String pin = "" + Math.abs(first3);
++
++        String fac = "";
++        if(c1.isSelected()){
++            fac = fac+"ATM CARD ";
++        } else if (c2.isSelected()) {
++            fac = fac+"Internet Banking";
++        } else if (c3.isSelected()) {
++            fac = fac+"Mobile Banking";
++        } else if (c4.isSelected()) {
++            fac = fac+"EMAIL Alerts";
++        } else if (c5.isSelected()) {
++            fac=fac+"Cheque Book";
++        } else if (c6.isSelected()) {
++            fac=fac+"E-Statement";
++        }
++
++        try {
++            if (e.getSource()==s){
++                if (atype.equals("")){
++                    JOptionPane.showMessageDialog(null,"Fill all the fields");
++                }else {
++                    connect c1 = new connect();
++                    String q1 = "insert into signupthree values('"+formno+"', '"+atype+"','"+cardno+"','"+pin+"','"+fac+"')";
++                    String q2 = "insert into login values('"+formno+"','"+cardno+"','"+pin+"')";
++                    c1.statement.executeUpdate(q1);
++                    c1.statement.executeUpdate(q2);
++                    JOptionPane.showMessageDialog(null,"Card Number : "+cardno+"\n Pin : "+pin );
++                    new Deposit(pin);
++                    setVisible(false);
++                }
++            } else if (e.getSource()==c) {
++                System.exit(0);
++            }
++
++        }catch (Exception E){
++            E.printStackTrace();
++        }
++
++    }
++
++    public static void main(String[] args) {
++        new Signup3("");
++    }
++}
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1720086961067)
++++ b/.idea/misc.xml	(date 1720086961067)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="22" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null	(date 1720086958013)
++++ b/.gitignore	(date 1720086958013)
+@@ -0,0 +1,29 @@
++### IntelliJ IDEA ###
++out/
++!**/src/main/**/out/
++!**/src/test/**/out/
++
++### Eclipse ###
++.apt_generated
++.classpath
++.factorypath
++.project
++.settings
++.springBeans
++.sts4-cache
++bin/
++!**/src/main/**/bin/
++!**/src/test/**/bin/
++
++### NetBeans ###
++/nbproject/private/
++/nbbuild/
++/dist/
++/nbdist/
++/.nb-gradle/
++
++### VS Code ###
++.vscode/
++
++### Mac OS ###
++.DS_Store
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1720086961977)
++++ b/.idea/.gitignore	(date 1720086961977)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: src/Banking/system/Withdrawl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/Withdrawl.java b/src/Banking/system/Withdrawl.java
+new file mode 100644
+--- /dev/null	(date 1720101444824)
++++ b/src/Banking/system/Withdrawl.java	(date 1720101444824)
+@@ -0,0 +1,107 @@
++package Banking.system;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++import java.sql.ResultSet;
++import java.util.Date;
++
++public class Withdrawl extends JFrame implements ActionListener {
++
++    String pin;
++    TextField textField;
++
++    JButton b1, b2;
++    Withdrawl(String pin){
++        this.pin=pin;
++        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/atm2.png"));
++        Image i2 = i1.getImage().getScaledInstance(1550,830,Image.SCALE_DEFAULT);
++        ImageIcon i3 = new ImageIcon(i2);
++        JLabel l3 = new JLabel(i3);
++        l3.setBounds(0,0,1550,830);
++        add(l3);
++
++        JLabel label1 = new JLabel("MAXIMUM WITHDRAWAL IS RS.10,000");
++        label1.setForeground(Color.WHITE);
++        label1.setFont(new Font("System", Font.BOLD, 16));
++        label1.setBounds(460,180,700,35);
++        l3.add(label1);
++
++        JLabel label2 = new JLabel("PLEASE ENTER YOUR AMOUNT");
++        label2.setForeground(Color.WHITE);
++        label2.setFont(new Font("System", Font.BOLD, 16));
++        label2.setBounds(460,220,400,35);
++        l3.add(label2);
++
++
++        textField = new TextField();
++        textField.setBackground(new Color(65,125,128));
++        textField.setForeground(Color.WHITE);
++        textField.setBounds(460,260,320,25);
++        textField.setFont(new Font("Raleway", Font.BOLD,22));
++        l3.add(textField);
++
++        b1 = new JButton("WITHDRAW");
++        b1.setBounds(700,362,150,35);
++        b1.setBackground(new Color(65,125,128));
++        b1.setForeground(Color.WHITE);
++        b1.addActionListener(this);
++        l3.add(b1);
++
++        b2 = new JButton("BACK");
++        b2.setBounds(700,406,150,35);
++        b2.setBackground(new Color(65,125,128));
++        b2.setForeground(Color.WHITE);
++        b2.addActionListener(this);
++        l3.add(b2);
++
++        setLayout(null);
++        setSize(1550,1080);
++        setLocation(0,0);
++        setVisible(true);
++    }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++        if(e.getSource()==b1) {
++            try {
++                String amount = textField.getText();
++                Date date = new Date();
++                if (textField.getText().equals("")) {
++                    JOptionPane.showMessageDialog(null, "Please enter the Amount you want to withdraw");
++                } else {
++                    connect c = new connect();
++                    ResultSet resultSet = c.statement.executeQuery("select * from bank where pin = '" + pin + "'");
++                    int balance = 0;
++                    while (resultSet.next()) {
++                        if (resultSet.getString("type").equals("Deposit")) {
++                            balance += Integer.parseInt(resultSet.getString("amount"));
++                        } else {
++                            balance -= Integer.parseInt(resultSet.getString("amount"));
++                        }
++                    }
++                    if (balance < Integer.parseInt(amount)) {
++                        JOptionPane.showMessageDialog(null, "Insuffient Balance");
++                        return;
++                    }
++
++                    c.statement.executeUpdate("insert into bank values('" + pin + "', '" + date + "', 'Withdrawl', '" + amount + "' )");
++                    JOptionPane.showMessageDialog(null, "Rs. " + amount + " Debited Successfully");
++                    setVisible(false);
++                    new main_Class(pin);
++
++                }
++            } catch (Exception E) {
++
++            }
++        } else if (e.getSource()==b2) {
++            setVisible(false);
++            new main_Class(pin);
++        }
++    }
++
++    public static void main(String[] args) {
++        new Withdrawl("");
++    }
++}
+\ No newline at end of file
+Index: src/Banking/system/Login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/Login.java b/src/Banking/system/Login.java
+new file mode 100644
+--- /dev/null	(date 1720101748664)
++++ b/src/Banking/system/Login.java	(date 1720101748664)
+@@ -0,0 +1,133 @@
++package Banking.system;
++
++import Banking.system.Signup;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++import java.sql.ResultSet;
++
++public class Login extends JFrame implements ActionListener {
++    JLabel label1, label2, label3;
++    JTextField textField2;
++    JPasswordField passwordField3;
++
++    JButton button1,button2,button3;
++    Login(){
++        super("Bank Management System");
++        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/bank.png"));
++        Image i2 = i1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);
++        ImageIcon i3 = new ImageIcon(i2);
++        JLabel image = new JLabel(i3);
++        image.setBounds(350,10,100,100);
++        add(image);
++
++        ImageIcon ii1 = new ImageIcon(ClassLoader.getSystemResource("icon/card.png"));
++        Image ii2 = ii1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);
++        ImageIcon ii3 = new ImageIcon(ii2);
++        JLabel iimage = new JLabel(ii3);
++        iimage.setBounds(630,350,100,100);
++        add(iimage);
++
++        label1 = new JLabel("WELCOME TO ATM");
++        label1.setForeground(Color.WHITE);
++        label1.setFont(new Font("AvantGarde", Font.BOLD, 38));
++        label1.setBounds(230,125,450,40);
++        add(label1);
++
++        label2 = new JLabel("Card No:");
++        label2.setFont(new Font("Ralway", Font.BOLD, 28));
++        label2.setForeground(Color.WHITE);
++        label2.setBounds(150,190,375,30);
++        add(label2);
++
++        textField2 = new JTextField(15);
++        textField2.setBounds(325,190,230,30);
++        textField2.setFont(new Font("Arial", Font.BOLD,14));
++        add(textField2);
++
++        label3 = new JLabel("PIN: ");
++        label3.setFont(new Font("Ralway", Font.BOLD, 28));
++        label3.setForeground(Color.WHITE);
++        label3.setBounds(150,250,375,30);
++        add(label3);
++
++        passwordField3 = new JPasswordField(15);
++        passwordField3.setBounds(325,250,230,30);
++        passwordField3.setFont(new Font("Arial", Font.BOLD, 14));
++        add(passwordField3);
++
++        button1 = new JButton("SIGN IN");
++        button1.setFont(new Font("Arial", Font.BOLD, 14));
++        button1.setForeground(Color.WHITE);
++        button1.setBackground(Color.BLACK);
++        button1.setBounds(300,300,100, 30);
++        button1.addActionListener(this);
++        add(button1);
++
++        button2 = new JButton("CLEAR");
++        button2.setFont(new Font("Arial", Font.BOLD, 14));
++        button2.setForeground(Color.WHITE);
++        button2.setBackground(Color.BLACK);
++        button2.setBounds(430,300,100, 30);
++        button2.addActionListener(this);
++        add(button2);
++
++        button3 = new JButton("SIGN UP");
++        button3.setFont(new Font("Arial", Font.BOLD, 14));
++        button3.setForeground(Color.WHITE);
++        button3.setBackground(Color.BLACK);
++        button3.setBounds(300,350,230, 30);
++        button3.addActionListener(this);
++        add(button3);
++
++        ImageIcon iii1 = new ImageIcon(ClassLoader.getSystemResource("icon/backbg.png"));
++        Image iii2 = iii1.getImage().getScaledInstance(850,480,Image.SCALE_DEFAULT);
++        ImageIcon iii3 = new ImageIcon(iii2);
++        JLabel iiimage = new JLabel(iii3);
++        iiimage.setBounds(0,0,850,480);
++        add(iiimage);
++
++
++        setLayout(null);
++        setSize(850,480);
++        setLocation(450,200);
++        setUndecorated(true);
++        setVisible(true);
++    }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++        try{
++            if (e.getSource()==button1){
++                connect c = new connect();
++                String cardno = textField2.getText();
++                String pin = passwordField3.getText();
++                String q = "select * from login where card_number = '"+cardno+"' and  pin = '"+pin+"'";
++                ResultSet resultSet = c.statement.executeQuery(q);
++                if (resultSet.next()){
++                    setVisible(false);
++                    new main_Class(pin);
++                }else {
++                    JOptionPane.showMessageDialog(null,"Incorrect Card Number or PIN");
++                }
++
++
++            }else if (e.getSource() == button2){
++                textField2.setText("");
++                passwordField3.setText("");
++            }else if (e.getSource() == button3){
++                new Signup();
++                setVisible(false);
++            }
++        }catch (Exception E){
++            E.printStackTrace();
++        }
++
++    }
++
++    public static void main(String[] args) {
++        new Login();
++    }
++}
+\ No newline at end of file
+Index: src/Banking/system/FastCash.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/FastCash.java b/src/Banking/system/FastCash.java
+new file mode 100644
+--- /dev/null	(date 1720101258767)
++++ b/src/Banking/system/FastCash.java	(date 1720101258767)
+@@ -0,0 +1,126 @@
++package Banking.system;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++import java.sql.ResultSet;
++import java.util.Date;
++
++public class FastCash extends JFrame implements ActionListener {
++
++    JButton b1,b2,b3,b4,b5,b6,b7;
++    String pin;
++    FastCash(String pin){
++        this.pin =pin;
++
++        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/atm2.png"));
++        Image i2 = i1.getImage().getScaledInstance(1550,830,Image.SCALE_DEFAULT);
++        ImageIcon i3 = new ImageIcon(i2);
++        JLabel l3 = new JLabel(i3);
++        l3.setBounds(0,0,1550,830);
++        add(l3);
++
++        JLabel label = new JLabel("SELECT WITHDRAWL AMOUNT");
++        label.setBounds(445,180,700,35);
++        label.setForeground(Color.WHITE);
++        label.setFont(new Font("System",Font.BOLD,23));
++        l3.add(label);
++
++        b1 = new JButton("Rs. 100");
++        b1.setForeground(Color.WHITE);
++        b1.setBackground(new Color(65,125,128));
++        b1.setBounds(410,274,150,35);
++        b1.addActionListener(this);
++        l3.add(b1);
++
++        b2 = new JButton("Rs. 500");
++        b2.setForeground(Color.WHITE);
++        b2.setBackground(new Color(65,125,128));
++        b2.setBounds(700,274,150,35);
++        b2.addActionListener(this);
++        l3.add(b2);
++
++        b3 = new JButton("Rs. 1000");
++        b3.setForeground(Color.WHITE);
++        b3.setBackground(new Color(65,125,128));
++        b3.setBounds(410,318,150,35);
++        b3.addActionListener(this);
++        l3.add(b3);
++
++        b4 = new JButton("Rs. 2000");
++        b4.setForeground(Color.WHITE);
++        b4.setBackground(new Color(65,125,128));
++        b4.setBounds(700,318,150,35);
++        b4.addActionListener(this);
++        l3.add(b4);
++
++        b5 = new JButton("Rs. 5000");
++        b5.setForeground(Color.WHITE);
++        b5.setBackground(new Color(65,125,128));
++        b5.setBounds(410,362,150,35);
++        b5.addActionListener(this);
++        l3.add(b5);
++
++        b6 = new JButton("Rs. 10000");
++        b6.setForeground(Color.WHITE);
++        b6.setBackground(new Color(65,125,128));
++        b6.setBounds(700,362,150,35);
++        b6.addActionListener(this);
++        l3.add(b6);
++
++        b7 = new JButton("BACK");
++        b7.setForeground(Color.WHITE);
++        b7.setBackground(new Color(65,125,128));
++        b7.setBounds(700,406,150,35);
++        b7.addActionListener(this);
++        l3.add(b7);
++
++        setLayout(null);
++        setSize(1550,1080);
++        setLocation(0,0);
++        setVisible(true);
++
++    }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++        if (e.getSource()==b7) {
++            setVisible(false);
++            new main_Class(pin);
++        }else {
++            String amount = ((JButton)e.getSource()).getText().substring(4);
++            connect c = new connect();
++            Date date = new Date();
++            try{
++                ResultSet resultSet = c.statement.executeQuery("select * from bank where pin = '"+pin+"'");
++                int balance =0;
++                while (resultSet.next()){
++                    if (resultSet.getString("type").equals("Deposit")){
++                        balance += Integer.parseInt(resultSet.getString("amount"));
++                    }else {
++                        balance -= Integer.parseInt(resultSet.getString("amount"));
++                    }
++                }
++
++                if (e.getSource() != b7 && balance < Integer.parseInt(amount)){
++                    JOptionPane.showMessageDialog(null, "Insuffient Balance");
++                    return;
++                }
++
++                c.statement.executeUpdate("insert into bank values('"+pin+"','"+date+"', 'withdrawl', '"+amount+"')");
++                JOptionPane.showMessageDialog(null, "Rs. "+amount+" Debited Successfully");
++            }catch (Exception E){
++                E.printStackTrace();
++            }
++            setVisible(false);
++            new main_Class(pin);
++        }
++
++
++    }
++
++    public static void main(String[] args) {
++        new FastCash("");
++    }
++}
+\ No newline at end of file
+Index: src/Banking/system/Signup.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/Signup.java b/src/Banking/system/Signup.java
+new file mode 100644
+--- /dev/null	(date 1720102166545)
++++ b/src/Banking/system/Signup.java	(date 1720102166545)
+@@ -0,0 +1,240 @@
++
++package Banking.system;
++
++import com.toedter.calendar.JDateChooser;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++import java.util.Random;
++
++public class Signup extends JFrame implements ActionListener {
++    JRadioButton r1,r2,m1,m2,m3;
++    JButton next;
++
++    JTextField textName ,textFname, textEmail,textAdd,textcity,textState,textPin;
++    JDateChooser dateChooser;
++    Random ran = new Random();
++    long first4 =(ran.nextLong() % 9000L) +1000L;
++    String first = " " + Math.abs(first4);
++    Signup(){
++        super ("APPLICATION FORM");
++
++        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/bank.png"));
++        Image i2 = i1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);
++        ImageIcon i3 = new ImageIcon(i2);
++        JLabel image = new JLabel(i3);
++        image.setBounds(25,10,100,100);
++        add(image);
++
++        JLabel label1 = new JLabel("APPLICATION FORM NO."+ first);
++        label1.setBounds(160,20,600,40);
++        label1.setFont(new Font("Raleway",Font.BOLD,38));
++        add(label1);
++
++        JLabel label2 = new JLabel("Page 1");
++        label2.setFont(new Font("Ralway",Font.BOLD, 22));
++        label2.setBounds(330,70,600,30);
++        add(label2);
++
++        JLabel label3 = new JLabel("Personal Details");
++        label3.setFont(new Font("Raleway", Font.BOLD,22));
++        label3.setBounds(290,90,600,30);
++        add(label3);
++
++        JLabel labelName = new JLabel("Name :");
++        labelName.setFont(new Font("Raleway", Font.BOLD, 20));
++        labelName.setBounds(100,190,100,30);
++        add(labelName);
++
++        textName = new JTextField();
++        textName.setFont(new Font("Raleway",Font.BOLD, 14));
++        textName.setBounds(300,190,400,30);
++        add(textName);
++
++        JLabel labelfName = new JLabel("Father's Name :");
++        labelfName.setFont(new Font("Raleway", Font.BOLD, 20));
++        labelfName.setBounds(100,240,200,30);
++        add(labelfName);
++
++        textFname = new JTextField();
++        textFname.setFont(new Font("Raleway",Font.BOLD, 14));
++        textFname.setBounds(300,240,400,30);
++        add(textFname);
++
++        JLabel DOB = new JLabel("Date of Birth");
++        DOB.setFont(new Font("Raleway", Font.BOLD, 20));
++        DOB.setBounds(100,340,200,30);
++        add(DOB);
++
++        dateChooser = new JDateChooser();
++        dateChooser.setForeground(new Color(105,105,105));
++        dateChooser.setBounds(300,340,400,30);
++        add(dateChooser);
++
++        JLabel labelG = new JLabel("Gender");
++        labelG.setFont(new Font("Raleway", Font.BOLD, 20));
++        labelG.setBounds(100,290,200,30);
++        add(labelG);
++
++        r1 = new JRadioButton("Male");
++        r1.setFont(new Font("Raleway", Font.BOLD,14));
++        r1.setBackground(new Color(222,255,228));
++        r1.setBounds(300,290,60,30);
++        add(r1);
++
++        r2 = new JRadioButton("Female");
++        r2.setBackground(new Color(222,255,228));
++        r2.setFont(new Font("Raleway", Font.BOLD,14));
++        r2.setBounds(450,290,90,30);
++        add(r2);
++
++        ButtonGroup buttonGroup = new ButtonGroup();
++        buttonGroup.add(r1);
++        buttonGroup.add(r2);
++
++        JLabel labelEmail = new JLabel("Email address :");
++        labelEmail.setFont(new Font("Raleway", Font.BOLD, 20));
++        labelEmail.setBounds(100,390,200,30);
++        add(labelEmail);
++
++        textEmail = new JTextField();
++        textEmail.setFont(new Font("Raleway",Font.BOLD, 14));
++        textEmail.setBounds(300,390,400,30);
++        add(textEmail);
++
++
++        JLabel labelMs = new JLabel("Marital Status :");
++        labelMs.setFont(new Font("Raleway", Font.BOLD, 20));
++        labelMs.setBounds(100,440,200,30);
++        add(labelMs);
++
++        m1 = new JRadioButton("Married");
++        m1.setBounds(300,440,100,30);
++        m1.setBackground(new Color(222,255,228));
++        m1.setFont(new Font("Raleway", Font.BOLD,14));
++        add(m1);
++
++        m2 = new JRadioButton("Unmarried");
++        m2.setBackground(new Color(222,255,228));
++        m2.setBounds(450,440,100,30);
++        m2.setFont(new Font("Raleway", Font.BOLD,14));
++        add(m2);
++
++        m3 = new JRadioButton("Other");
++        m3.setBackground(new Color(222,255,228));
++        m3.setBounds(635,440,100,30);
++        m3.setFont(new Font("Raleway", Font.BOLD,14));
++        add(m3);
++
++        ButtonGroup buttonGroup1 = new ButtonGroup();
++        buttonGroup1.add(m1);
++        buttonGroup1.add(m2);
++        buttonGroup1.add(m3);
++
++        JLabel labelAdd = new JLabel("Address :");
++        labelAdd.setFont(new Font("Raleway", Font.BOLD, 20));
++        labelAdd.setBounds(100,490,200,30);
++        add(labelAdd);
++
++        textAdd = new JTextField();
++        textAdd.setFont(new Font("Raleway",Font.BOLD, 14));
++        textAdd.setBounds(300,490,400,30);
++        add(textAdd);
++
++        JLabel labelCity = new JLabel("City :");
++        labelCity.setFont(new Font("Raleway", Font.BOLD, 20));
++        labelCity.setBounds(100,540,200,30);
++        add(labelCity);
++
++        textcity = new JTextField();
++        textcity.setFont(new Font("Raleway",Font.BOLD, 14));
++        textcity.setBounds(300,540,400,30);
++        add(textcity);
++
++        JLabel labelPin = new JLabel("Pin Code :");
++        labelPin.setFont(new Font("Raleway", Font.BOLD, 20));
++        labelPin.setBounds(100,590,200,30);
++        add(labelPin);
++
++        textPin = new JTextField();
++        textPin.setFont(new Font("Raleway",Font.BOLD, 14));
++        textPin.setBounds(300,590,400,30);
++        add(textPin);
++
++        JLabel labelstate = new JLabel("State :");
++        labelstate.setFont(new Font("Raleway", Font.BOLD, 20));
++        labelstate.setBounds(100,640,200,30);
++        add( labelstate);
++
++        textState = new JTextField();
++        textState.setFont(new Font("Raleway",Font.BOLD, 14));
++        textState.setBounds(300,640,400,30);
++        add(textState);
++
++        next = new JButton("Next");
++        next.setFont(new Font("Raleway",Font.BOLD, 14));
++        next.setBackground(Color.BLACK);
++        next.setForeground(Color.WHITE);
++        next.setBounds(620,710,80,30);
++        next.addActionListener(this);
++        add(next);
++
++        getContentPane().setBackground(new Color(222,255,228));
++        setLayout(null);
++        setSize(850,800);
++        setLocation(360,40);
++        setVisible(true);
++
++    }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++
++        String formno = first;
++        String name = textName.getText();
++        String fname = textFname.getText();
++        String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
++        String gender = null;
++        if(r1.isSelected()){
++            gender = "Male";
++        }else if (r2.isSelected()){
++            gender = "Female";
++        }
++        String email = textEmail.getText();
++        String marital =null;
++        if (m1.isSelected()){
++            marital = "Married";
++        } else if (m2.isSelected()) {
++            marital = "Unmarried";
++        } else if (m3.isSelected()) {
++            marital = "Other";
++        }
++
++        String address = textAdd.getText();
++        String city = textcity.getText();
++        String pincode = textPin.getText();
++        String state = textState.getText();
++
++        try{
++            if (textName.getText().equals("")){
++                JOptionPane.showMessageDialog(null, "Fill all the fields");
++            }else {
++                connect c = new connect();
++                String q = "insert into signup values('"+formno+"', '"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"', '"+address+"', '"+city+"','"+pincode+"','"+state+"' )";
++                c.statement.executeUpdate(q);
++                new Signup2(formno);
++                setVisible(false);
++            }
++
++        }catch (Exception E){
++            E.printStackTrace();
++        }
++
++    }
++
++    public static void main(String[] args) {
++        new Signup();
++    }
++}
+Index: src/Banking/system/mini.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/mini.java b/src/Banking/system/mini.java
+new file mode 100644
+--- /dev/null	(date 1720101354736)
++++ b/src/Banking/system/mini.java	(date 1720101354736)
+@@ -0,0 +1,83 @@
++package Banking.system;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++import java.sql.ResultSet;
++
++public class mini extends JFrame implements ActionListener {
++    String pin;
++    JButton button;
++    mini(String pin){
++        this.pin = pin;
++        getContentPane().setBackground(new Color(255,204,204));
++        setSize(400,600);
++        setLocation(20,20);
++        setLayout(null);
++
++        JLabel label1 = new JLabel();
++        label1.setBounds(20,140,400,200);
++        add(label1);
++
++        JLabel label2 = new JLabel("TechCoder A.V");
++        label2.setFont(new Font("System", Font.BOLD,15));
++        label2.setBounds(150,20,200,20);
++        add(label2);
++
++        JLabel label3 = new JLabel();
++        label3.setBounds(20,80,300,20);
++        add(label3);
++
++        JLabel label4 = new JLabel();
++        label4.setBounds(20,400,300,20);
++        add(label4);
++
++        try{
++            connect c = new connect();
++            ResultSet resultSet = c.statement.executeQuery("select * from login where pin = '"+pin+"'");
++            while (resultSet.next()){
++                label3.setText("Card Number:  "+ resultSet.getString("card_number").substring(0,4) + "XXXXXXXX"+ resultSet.getString("card_number").substring(12));
++            }
++        }catch (Exception e ){
++            e.printStackTrace();
++        }
++
++        try{
++            int balance =0;
++            connect c = new connect();
++            ResultSet resultSet = c.statement.executeQuery("select * from bank where pin = '"+pin+"'");
++            while (resultSet.next()){
++
++                label1.setText(label1.getText() + "<html>"+resultSet.getString("date")+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+resultSet.getString("type")+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+resultSet.getString("amount")+ "<br><br><html>");
++
++                if (resultSet.getString("type").equals("Deposit")){
++                    balance += Integer.parseInt(resultSet.getString("amount"));
++                }else {
++                    balance -= Integer.parseInt(resultSet.getString("amount"));
++                }
++            }
++            label4.setText("Your Total Balance is Rs "+balance);
++        }catch (Exception e){
++            e.printStackTrace();
++        }
++
++        button = new JButton("Exit");
++        button.setBounds(20,500,100,25);
++        button.addActionListener(this);
++        button.setBackground(Color.BLACK);
++        button.setForeground(Color.WHITE);
++        add(button);
++
++        setVisible(true);
++    }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++        setVisible(false);
++    }
++
++    public static void main(String[] args) {
++        new mini("");
++    }
++}
+\ No newline at end of file
+Index: src/Banking/system/Pin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/Pin.java b/src/Banking/system/Pin.java
+new file mode 100644
+--- /dev/null	(date 1720101396595)
++++ b/src/Banking/system/Pin.java	(date 1720101396595)
+@@ -0,0 +1,131 @@
++package Banking.system;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++
++public class Pin extends JFrame implements ActionListener {
++    JButton b1,b2;
++    JPasswordField p1,p2;
++    String pin;
++    Pin(String pin){
++        this.pin =pin;
++
++        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/atm2.png"));
++        Image i2 = i1.getImage().getScaledInstance(1550,830,Image.SCALE_DEFAULT);
++        ImageIcon i3 = new ImageIcon(i2);
++        JLabel l3 = new JLabel(i3);
++        l3.setBounds(0,0,1550,830);
++        add(l3);
++
++        JLabel label1 = new JLabel("CHANGE YOUR PIN");
++        label1.setForeground(Color.WHITE);
++        label1.setFont(new Font("System", Font.BOLD, 16));
++        label1.setBounds(430,180,400,35);
++        l3.add(label1);
++
++
++        JLabel label2 = new JLabel("New PIN: ");
++        label2.setForeground(Color.WHITE);
++        label2.setFont(new Font("System", Font.BOLD, 16));
++        label2.setBounds(430,220,150,35);
++        l3.add(label2);
++
++        p1 = new JPasswordField();
++        p1.setBackground(new Color(65,125,128));
++        p1.setForeground(Color.WHITE);
++        p1.setBounds(600,220,180,25);
++        p1.setFont(new Font("Raleway", Font.BOLD,22));
++        l3.add(p1);
++
++        JLabel label3 = new JLabel("Re-Enter New PIN: ");
++        label3.setForeground(Color.WHITE);
++        label3.setFont(new Font("System", Font.BOLD, 16));
++        label3.setBounds(430,250,400,35);
++        l3.add(label3);
++
++        p2 = new JPasswordField();
++        p2.setBackground(new Color(65,125,128));
++        p2.setForeground(Color.WHITE);
++        p2.setBounds(600,255,180,25);
++        p2.setFont(new Font("Raleway", Font.BOLD,22));
++        l3.add(p2);
++
++
++
++        b1 = new JButton("CHANGE");
++        b1.setBounds(700,362,150,35);
++        b1.setBackground(new Color(65,125,128));
++        b1.setForeground(Color.WHITE);
++        b1.addActionListener(this);
++        l3.add(b1);
++
++        b2 = new JButton("BACK");
++        b2.setBounds(700,406,150,35);
++        b2.setBackground(new Color(65,125,128));
++        b2.setForeground(Color.WHITE);
++        b2.addActionListener(this);
++        l3.add(b2);
++
++
++
++        setSize(1550,1080);
++        setLayout(null);
++        setLocation(0,0);
++        setVisible(true);
++    }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++
++        try{
++
++            String pin1 = p1.getText();
++            String pin2 = p2.getText();
++
++            if (!pin1.equals(pin2)){
++                JOptionPane.showMessageDialog(null,"Entered PIN does not match");
++                return;
++            }
++            if (e.getSource()==b1){
++                if (p1.getText().equals("")){
++                    JOptionPane.showMessageDialog(null,"Enter New PIN");
++                    return;
++                }
++                if (p2.getText().equals("")){
++                    JOptionPane.showMessageDialog(null,"Re-Enter New PIN");
++                    return;
++                }
++
++                 connect c = new connect();
++                String q1 = "update bank set pin = '"+pin1+"' where pin = '"+pin+"'";
++                String q2 = "update login set pin = '"+pin1+"' where pin = '"+pin+"'";
++                String q3 = "update signupthree set pin = '"+pin1+"' where pin = '"+pin+"'";
++
++                c.statement.executeUpdate(q1);
++                c.statement.executeUpdate(q2);
++                c.statement.executeUpdate(q3);
++
++                JOptionPane.showMessageDialog(null,"PIN changed successfully");
++                setVisible(false);
++                new main_Class(pin);
++
++            } else if (e.getSource()==b2) {
++                new main_Class(pin);
++                setVisible(false);
++            }
++
++
++        }catch (Exception E){
++            E.printStackTrace();
++        }
++
++
++
++    }
++
++    public static void main(String[] args) {
++        new Pin("");
++    }
++}
+\ No newline at end of file
+Index: src/Banking/system/BalanceEnquriy.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banking/system/BalanceEnquriy.java b/src/Banking/system/BalanceEnquriy.java
+new file mode 100644
+--- /dev/null	(date 1720101492355)
++++ b/src/Banking/system/BalanceEnquriy.java	(date 1720101492355)
+@@ -0,0 +1,76 @@
++
++package Banking.system;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++import java.sql.ResultSet;
++
++public class BalanceEnquriy extends JFrame implements ActionListener {
++
++    String pin;
++    JLabel label2;
++    JButton b1;
++    BalanceEnquriy(String pin){
++        this.pin =pin;
++
++        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/atm2.png"));
++        Image i2 = i1.getImage().getScaledInstance(1550,830,Image.SCALE_DEFAULT);
++        ImageIcon i3 = new ImageIcon(i2);
++        JLabel l3 = new JLabel(i3);
++        l3.setBounds(0,0,1550,830);
++        add(l3);
++
++        JLabel label1 = new JLabel("Your Current Balance is Rs ");
++        label1.setForeground(Color.WHITE);
++        label1.setFont(new Font("System", Font.BOLD, 16));
++        label1.setBounds(430,180,700,35);
++        l3.add(label1);
++
++        label2 = new JLabel();
++        label2.setForeground(Color.WHITE);
++        label2.setFont(new Font("System", Font.BOLD, 16));
++        label2.setBounds(430,220,400,35);
++        l3.add(label2);
++
++        b1 = new JButton("Back");
++        b1.setBounds(700,406,150,35);
++        b1.setBackground(new Color(65,125,128));
++        b1.setForeground(Color.WHITE);
++        b1.addActionListener(this);
++        l3.add(b1);
++
++        int balance =0;
++        try{
++            connect c = new connect();
++            ResultSet resultSet = c.statement.executeQuery("Select * from bank where pin = '"+pin+"'");
++            while (resultSet.next()){
++                if (resultSet.getString("type").equals("Deposit")){
++                    balance += Integer.parseInt(resultSet.getString("amount"));
++                }else {
++                    balance -= Integer.parseInt(resultSet.getString("amount"));
++                }
++            }
++        }catch (Exception e){
++            e.printStackTrace();
++        }
++
++        label2.setText(""+balance);
++
++        setLayout(null);
++        setSize(1550,1080);
++        setLocation(0,0);
++        setVisible(true);
++    }
++
++    @Override
++    public void actionPerformed(ActionEvent e) {
++        setVisible(false);
++        new main_Class(pin);
++    }
++
++    public static void main(String[] args) {
++        new BalanceEnquriy("");
++    }
++}
